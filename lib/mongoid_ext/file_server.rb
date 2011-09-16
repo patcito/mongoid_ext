@@ -45,7 +45,8 @@ class FileServer
     [200, {
       "Last-Modified"  => Time.now.httpdate,
       "Content-Type"   => @file.content_type,
-      "Content-Length" => @file.size.to_s
+      "Content-Length" => @file.size.to_s,
+      "Cache-Control" => 'max-age=315360000'
     }, body]
   end
 
